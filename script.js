@@ -1,33 +1,32 @@
 //your JS code here. If required.
-const circles = document.querySelectorAll('.circle');
-        const prevButton = document.getElementById('prev');
-        const nextButton = document.getElementById('next');
+document.addEventListener("DOMContentLoaded", function () {
+    const circles = document.querySelectorAll(".circle");
+    const prevButton = document.getElementById("prev");
+    const nextButton = document.getElementById("next");
+    let currentIndex = 0;
 
-        let currentIndex = 0;
+    function updateButtons() {
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex === circles.length - 1;
+    }
 
-        nextButton.addEventListener('click', () => {
-            if (currentIndex < circles.length - 1) {
-                currentIndex++;
-                updateProgressBar();
-            }
-        });
+    updateButtons();
 
-        prevButton.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateProgressBar();
-            }
-        });
-
-        function updateProgressBar() {
-            circles.forEach((circle, index) => {
-                if (index === currentIndex) {
-                    circle.classList.add('active');
-                } else {
-                    circle.classList.remove('active');
-                }
-            });
-
-            prevButton.disabled = currentIndex === 0;
-            nextButton.disabled = currentIndex === circles.length - 1;
+    nextButton.addEventListener("click", function () {
+        if (currentIndex < circles.length - 1) {
+            circles[currentIndex].classList.add("active");
+            currentIndex++;
+            circles[currentIndex].classList.add("active");
         }
+        updateButtons();
+    });
+
+    prevButton.addEventListener("click", function () {
+        if (currentIndex > 0) {
+            circles[currentIndex].classList.remove("active");
+            currentIndex--;
+            circles[currentIndex].classList.add("active");
+        }
+        updateButtons();
+    });
+});
