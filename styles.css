@@ -47,8 +47,14 @@
             background-color: #ccc;
             cursor: not-allowed;
         }
+#prev:disabled:hover{
+	color:gray;
+        }
 
         #next:disabled {
             background-color: #ccc;
             cursor: not-allowed;
+        }
+#next:disabled:hover{
+	color:gray;
         }
