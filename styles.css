@@ -1,1 +1,54 @@
 /*  your css code here. If applicable */
+.progress-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #ccc;
+			text-align:center;
+        }
+
+        .active {
+            background-color: #007bff;
+        }
+
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+#prev{
+	background:skyblue;
+	border:none;
+	border-radius:5px;
+}
+#prev:hover{
+	background:blue;
+	color:white;
+}
+#next{
+	background:skyblue;
+	border:none;
+	border-radius:5px;
+}
+#next:hover{
+	background:blue;
+	color:white;
+}
+
+        /* CSS for button states */
+        #prev:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        #next:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
